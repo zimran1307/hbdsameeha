@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday Sameeha (Kaleshi) 🎀💖</title>
+
+  <style>
+    /* ---------- Base ---------- */
+    :root{
+      --bg:#ffe4f2;
+      --accent:#ff4da6;
+      --accent-2:#ff2e9a;
+      --card:#ffd6ef;
+      --border:#ff71c6;
+    }
+    html,body{height:100%; margin:0; padding:0; font-family:"Comic Sans MS",cursive; background:var(--bg); color:var(--accent); overflow-x:hidden;}
+    h1,h2,h3{text-align:center; color:var(--accent-2); margin:8px 0;}
+    .section{background:white; margin:24px; padding:20px; border-radius:18px; border:3px solid #ff9bd6; box-shadow:0 6px 18px rgba(255,155,214,0.15);}
+    .gallery{display:flex; flex-wrap:wrap; gap:16px; justify-content:center; padding:10px;}
+    .gallery img{width:220px; height:260px; object-fit:cover; border-radius:16px; border:4px dashed #ff7ac4; transform:rotate(-2deg); transition:transform .25s;}
+    .gallery img:hover{transform:scale(1.05) rotate(1deg);}
+    .button{display:inline-block; margin:12px auto; padding:12px 20px; background:var(--accent); color:white; border:none; border-radius:12px; cursor:pointer; font-size:18px;}
+    .button:hover{transform:scale(1.04); background:#ff1c8b;}
+    .quote-card{background:var(--card); padding:12px; border-radius:12px; border:2px dotted var(--border); font-size:16px; position:relative;}
+    .quote-card::after{content:'💕'; position:absolute; right:10px; top:10px;}
+
+    /* ---------- hero & big photo ---------- */
+    .hero{padding:36px; background:url('https://i.imgur.com/OwcuQpG.png') center/contain no-repeat;}
+    .big-photo{display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:14px;}
+    .big-photo img{width:460px; max-width:90%; border-radius:22px; border:5px solid #ff71c6; box-shadow:0 12px 30px rgba(255,155,214,0.12);}
+
+    /* ---------- stickers ---------- */
+    .sticker{position: absolute; width:100px; opacity:.85; animation:float 5s ease-in-out infinite;}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-16px)}100%{transform:translateY(0)}}
+
+    /* ---------- popup ---------- */
+    #popup{display:none; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); background:#ffe2f3; padding:22px; border-radius:16px; border:4px solid #ff70bf; z-index:9999; box-shadow:0 10px 30px rgba(255,155,214,0.25); text-align:center;}
+    #popup button{margin-top:12px; padding:8px 16px; border-radius:10px; border:none; background:#ff3fa1; color:white; cursor:pointer;}
+
+    /* ---------- loader / slideshow ---------- */
+    #loader, #slideshowIntro{position:fixed; left:0; top:0; width:100%; height:100%; display:flex; justify-content:center; align-items:center; flex-direction:column; z-index:9999; background:var(--bg);}
+    #slideshowIntro{z-index:9998;}
+    #slideshowIntro img{border:4px solid var(--border); border-radius:14px; box-shadow:0 8px 26px rgba(255,155,214,.12); max-width:85%; height:auto;}
+    @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+    /* ---------- kitty walk ---------- */
+    #kittyWalk{position:fixed; bottom:12px; left:-160px; width:110px; animation:walkKitty 14s linear infinite; z-index:800;}
+    @keyframes walkKitty{0%{left:-160px}50%{left:80%}100%{left:-160px}}
+
+    body{cursor: url('https://i.imgur.com/6cJ7nbO.png'), auto;}
+    body{opacity:0; transition:opacity 1s ease-in-out;}
+    body.fade-in{opacity:1;}
+
+    @media (max-width:600px){
+      .gallery img{width:150px; height:180px;}
+      .big-photo img{width:90%}
+    }
+    /* 🔥 Blur everything when secret is unlocked */
+body.blurEverything > *:not(#secretPage) {
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+/* Center video nicely */
+#secretPage {
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Title -->
+  <h1>🎀 Happy Birthday To The Coolest Craziest Girl-Sameeha — My Kaleshi 🎀</h1>
+  <h3>The cutest Hello Kitty–themed surprise just for you 💖</h3>
+
+  <div class="hero"></div>
+
+  <!-- Big Photo Under Title -->
+  <div class="big-photo">
+    <img id="bigGuppi" src="guppi-big.jpg" alt="Guppi big photo">
+
+
+    <h2 style="color:var(--accent-2); font-size:28px; margin:8px 0;">
+      HAPPY BDAY GUPPI 🎀
+    </h2>
+  </div>
+
+
+
+ <!-- Cute floating stickers -->
+<img class="sticker" src="guppi1.jpg" style="top: 180px; left: 18px;" alt="sticker"/>
+<img class="sticker" src="guppi2.jpg" style="top: 180px; right: 22px; animation-delay: .8s;" alt="sticker"/>
+<img class="sticker" src="guppi3.jpg" style="top: 500px; left: 18px; animation-delay: 1.4s;" alt="sticker"/>
+<img class="sticker" src="guppi4.jpg" style="top: 500px; right: 22px; animation-delay: 1.4s;" alt="sticker"/>
+
+
+  <!-- Photo Gallery -->
+  <div class="section">
+    <h2>📸 TOTALLY A DIVA</h2>
+    <div class="gallery">
+      <img src="h1.jpg" alt="photo1" />
+      <img src="h2.jpg" alt="photo2" />
+      <img src="h3.jpg" alt="photo3" />
+      <img src="h4.jpg" alt="photo4" />
+    </div>
+  </div>
+
+  <!-- Editable Message Section -->
+  <div class="section">
+    <h2>💌 A Message Straight From My Heart</h2>
+    <p style="font-size:18px; line-height:1.6;">
+Happy 20th.<br><br>
+
+So yeah a v happy bday to the person i met literally a few months back (19 april) lol (for the 2nd time , last time i did a big blunder *shaadi proposal seedha*) lol<br><br>
+
+you came in my life when i stopped making friends stopped myself getting attached or dependent .<br>
+It was 3 days of talking w you that i realised that i was gonna do anything possible to give you what you deserved.<br><br>
+
+I remember you telling me about the non chalant and how you never got what you craved for .<br>
+IDK trust me idk how and when i put myself in this path of getting attached to you.<br><br>
+
+ik you dont believe and you are scared of all of this you dont wany to repeat all this (jab hamara time aaya (doosri baar) to sameeha ka bharosa uth gaya lol).<br><br>
+
+i mean we started v v casually but look at us now .<br><br>
+
+your fear of getting attached or dependent ik all of that isiliye sameeha i have never said this before (maybe lol) but i have realised many things w you the biggest one is ki jitna you show how strong you are from the outside utna hi weak you are from the inside.<br><br>
+
+jitna you say you don’t make up expectations ki saamne waala kuch na kare utna you expect someone to give you to listen to you , to be there for you.<br><br>
+
+i have seen it when i am not there you genuinely feel as if you need someone to listen , you feel bored (sometimes).<br><br>
+
+and yahi to i have learned from you that loving a person , caring for a person is literally THE EASIEST thing if done in the right way w all honesty.<br><br>
+
+you dont demand you dont do nakhre much . all you want is me to be there w you w all trust.<br><br>
+
+Ik i am not best nor i am saying ki mai ban jaunga .<br><br>
+
+but sameeha ik one thing i’ll always sit w you and listen to you what went wrong , what in me made you hurt .<br>
+i am gonna be bad at times but i will sit infront of you head down . And ask you to complaint to me . Tell me kya galat kiya mai . I am gonna say multiple sorrys , try to understand you<br><br>
+
+trust me aisa kuch nahi karunga ki mai apni galti sunne na aa paun .<br><br>
+
+ik sabne bola h evey other person in your life .but yahi hai na jo bhi i have said is paragraph me , These are not promises girl, mai ye karunga mai vo karunga  , these are things i have been experiencing w you these past months, this is what i have done and given you all your time to trust me <br>
+but thank you for giving me itna time to prove myself to you.<br><br>
+
+i believe you when you say you r gonna leave one day sameeha.<br>
+Totally fine.<br><br>
+
+i mean until i have you i want to experience all the stages w you step by step.<br>
+i never rushed i never asked you for anything cuz kya maangu.<br><br>
+
+trust me when i say this galtiyan karti ho aur shayad hongi bhi kamiyaan (lol “kamiyan hongi aap me”) but who you are rn is KERAZY.<br><br>
+
+trust me choosing you wasn’t my majburi . it was my choice . (i am crying lol) KAISE HO ITNI ACHI<br><br>
+
+maybe hongi chizen tumme jo baakiyon ko na theek lage .<br>
+but the doy points i want YOU HAVE ALL OF THEM TICKED (bas 1 bachta namaz padhne lag jao bitiya lol) khair<br><br>
+
+aayenge hanare bhi ups and lows , sabke hote<br>
+i cant guarentee ki mai sab sahi karunga but mai rahunga HO YAAR AB ITNI KERAZY MAI KYA KARU .<br><br>
+
+ik you are not gonna fall.<br>
+ik you are scared<br>
+ik you are gonna leave.<br><br>
+
+but its okay never gonna force gonna be there for you . as a friend ? sure<br><br>
+
+i give you all the time you want .<br>
+idc if its gonna be today , tomorrow one month or never<br><br>
+
+ik hamara bhi deadline aayega .<br>
+but i mean if these efforts if this “experiencing phases w you” things makes you my ex at the end<br>
+i would be the happiest in the room .<br><br>
+
+(there might be tears rolling down my cheeks)<br><br>
+
+you are gonna leave but i am gonna be happy that i was loved by you and i was allowed to love a person like you .<br><br>
+
+ITNA KERAZY PERSON .<br><br>
+
+idk kab tak i would be alllowed to<br>
+idc if its not a forver things<br><br>
+
+but if i got the chance to be loved by sameeha<br>
+to get the words from her towards me<br><br>
+
+you asked me to do it today so i never forced it pehle , never mentioned it<br>
+never said those words<br><br>
+
+but<br>
+you asked me to do it today<br>
+i waited<br><br>
+
+so<br>
+here it is<br>
+.<br>
+i love you sameeha<br>
+and i mean it.<br><br>
+
+(i am not some bengali good height boy saying this to you so that you can help me in my assignments)<br><br>
+
+i mean it cuz i care about you<br>
+cuz i consider you as one of my owns<br><br>
+
+so yeah<br>
+your call<br>
+you say no today<br>
+not gonna repeat saying it until you ask me to.<br><br>
+
+(i am v v careful sameeha when it comes to anything related to you ) (sometimes kardeta galtiyan sorry bhai)<br><br>
+
+but i am genuinely v careful<br>
+i fear of doing halki si bhi cheez<br>
+idk if you have realised<br><br>
+
+but yea said 7th of December<br>
+7th of December it is<br><br>
+
+happy 20th girl 🎀✋🏻<br><br>
+</p>
+
+  </div>
+
+  <!-- Quotes Section -->
+  <div class="section">
+    <h2>✨ Iconic Quotes by My Kaleshi ✨</h2>
+    <div class="quotes">
+      <div class="quote-card">"MAI TO BEST HOON KAMIYA HONGI AAP ME"</div>
+      <div class="quote-card">"JALNE WAALE JALTE RAHENGE HAM TO AAGE BADHTE RAHENGE"</div>
+      <div class="quote-card">"ABDUL BAHAR NIKLO FAURAN 5 4 3 2 1.. "</div>
+    </div>
+  </div>
+
+  <!-- Click Surprise -->
+  <div style="text-align:center;">
+    <button class="button" onclick="showLove()">Click for a cute surprise 💗</button>
+  </div>
+
+  <div id="popup">
+    "Winter Arc me sab kalesh hote.". 💕<br>So how is the *WINTER ARC * going sameeha? lolol
+    <br><button onclick="closePopup()">Close</button>
+  </div>
+
+  <!-- Chat Screenshots Section -->
+  <div class="section">
+    <h2>💭 Our Chats — Memories Section</h2>
+    <div class="gallery">
+      <img src="ss1.jpg" alt="chat1">
+      <img src="ss2.jpg" alt="chat2">
+      <img src="ss3.jpg" alt="chat3">
+      <img src="ss4.jpg" alt="chat4">
+    </div>
+
+<textarea
+  style="width:100%; height:120px; border:3px dotted var(--border); border-radius:12px; padding:10px; font-size:16px; background:#fff0f7; color:var(--accent);"
+  placeholder="KERAZY CHATS
+1. You consoling me in Chennai
+2. Me saying sorry after doing some galti as always or maybe kuch hua bhi na ho mai bas faaltu paagal ho raha lol
+3. YOU BEING CUTE">
+</textarea>
+
+</div>
+
+<!-- Outfit Game Section -->
+<div class="section" style="text-align:center;">
+  <h2>🎀 Kaleshi Outfit Shuffle Game 🎀</h2>
+  <img id="outfitDisplay"
+       src="images/o1.jpg"
+       style="display:block; margin:10px auto; border-radius:14px; border:4px dashed #ff7ac4; width:250px; height:300px; object-fit:cover;"
+       alt="outfit" />
+  <button id="shuffleBtn" class="button">Show Random Outfit 💗</button>
+</div>
+
+<script>
+  // List of images (relative paths)
+  const outfits = [
+    "images/o1.jpg",
+    "images/o2.jpg",
+    "images/o3.jpg",
+    "images/o4.jpg",
+    "images/o5.jpg",
+    "images/o7.jpg",
+    "images/o8.jpg",
+    "images/o9.jpg",
+    "images/o10.jpg",
+    "images/o11.jpg",
+    "images/o12.jpg",
+    "images/o14.jpg",
+    "images/o15.jpg",
+    "images/o16.jpg",
+    "images/o17.jpg"
+  ];
+
+  // Preload images to reduce flicker
+  const preloaded = outfits.map(src => {
+    const img = new Image();
+    img.src = src;
+    return img;
+  });
+
+  // Fisher-Yates shuffle
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  // Create a shuffled copy and track index
+  let order = outfits.slice();
+  shuffleArray(order);
+  let currentIndex = 0;
+
+  function showNextOutfit() {
+    // If we ran out, reshuffle and restart
+    if (currentIndex >= order.length) {
+      order = outfits.slice();
+      shuffleArray(order);
+      currentIndex = 0;
+    }
+
+    // Set image src to next outfit and increment index
+    const imgEl = document.getElementById("outfitDisplay");
+    if (!imgEl) return; // defensive check
+    imgEl.src = order[currentIndex];
+    currentIndex++;
+  }
+
+  // Hook up button (safer than inline onclick)
+  document.getElementById("shuffleBtn").addEventListener("click", showNextOutfit);
+
+  // Optional: allow spacebar to advance
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+      e.preventDefault();
+      showNextOutfit();
+    }
+  });
+</script>
+
+<!-- Memories Section -->
+<div class="section">
+  <h2>💭 KERAZY DATES ON V KERAZY EVENTS 💭😝</h2>
+
+  <div style="display:flex; flex-direction:column; gap:30px;">
+
+    <!-- MEMORY 1 -->
+    <div style="border:3px dotted var(--border); border-radius:12px; padding:15px; background:#fff0f7;">
+      <p style="font-weight:bold; color:#007BFF; font-size:18px; margin-bottom:6px;">21 Feb 2024</p>
+      <p style="font-size:18px; margin-bottom:10px;">
+        All my life was a lie lol (ihy XO and shaurya lol) / Zimran ka bada fumble 😞✋🏻
+      </p>
+      <img src="m1.jpg" style="width:100%; border-radius:12px; margin-top:8px;">
+    </div>
+
+    <!-- MEMORY 2 -->
+    <div style="border:3px dotted var(--border); border-radius:12px; padding:15px; background:#fff0f7;">
+      <p style="font-weight:bold; color:#007BFF; font-size:18px; margin-bottom:6px;">19 April 2025</p>
+      <p style="font-size:18px; margin-bottom:10px;">
+        Comeback ho gaya 😭🤙🏻
+      </p>
+      <img src="m2.jpg" style="width:100%; border-radius:12px; margin-top:8px;">
+    </div>
+
+    <!-- MEMORY 3 -->
+<div style="border:3px dotted var(--border); border-radius:12px; padding:15px; background:#fff0f7;">
+  <p style="font-weight:bold; color:#007BFF; font-size:18px; margin-bottom:6px;">18 Aug 2025</p>
+  <p style="font-size:18px; margin-bottom:10px;">
+    sabaisthebest fan page . KERAZY PERSON KA KERAZY FANPAGE 😝
+  </p>
+  <img src="m4.jpg" style="width:60%; border-radius:12px; margin:auto; display:block; margin-top:8px;">
+</div>
+
+<!-- MEMORY 4 -->
+<div style="border:3px dotted var(--border); border-radius:12px; padding:15px; background:#fff0f7;">
+  <p style="font-weight:bold; color:#007BFF; font-size:18px; margin-bottom:6px;">20 Aug 2025</p>
+  <p style="font-size:18px; margin-bottom:10px;">
+    Sameeehaaa ka whatsapp mil gayaaaa hehe 🤭😇
+  </p>
+  <img src="m3.jpg" style="width:60%; border-radius:12px; margin:auto; display:block; margin-top:8px;">
+</div>
+
+
+  </div>
+</div>
+<!-- Spotify Section -->
+<div class="section" style="margin-top:40px; text-align:center;">
+  
+  <h2>🎧 I made a chotu si playlist . Take it here 🎧</h2>
+  
+  <p style="font-size:18px; margin-bottom:15px;">
+    I listen to them when aap dnd pe karke so jaati LOLOL 💗
+  </p>
+
+  <!-- BUTTON / LINK -->
+  <a href="https://open.spotify.com/playlist/2vZgTxzt2dYTA3VFZLlhn2?si=46a13db6f22b474a&pt=4e7617c4b5ec353aebe775ab81af7a29" 
+     style="display:inline-block; 
+            padding:12px 22px; 
+            border-radius:12px; 
+            background:#ff4da6; 
+            color:white; 
+            font-weight:600; 
+            text-decoration:none; 
+            font-size:18px;
+            border:3px solid white;">
+    🎶 Open Spotify Playlist 🎶
+  </a>
+
+</div>
+
+
+
+  
+  <!-- Secret Page / Unlock -->
+<div class="section" id="secretPage" style="display:none;">
+  <h2>🌟 Secret Page Only for My Kaleshi 🌟</h2>
+  <p style="font-size:18px;">This special page unlocks only with the correct password 💖</p>
+
+  <!-- VIDEO -->
+  <video id="secretVideo" controls style="width:90%; max-width:700px; border:4px solid pink; border-radius:16px; margin:15px auto; display:block;">
+    <source src="myvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- CLOSE BUTTON (correct place) -->
+  <button id="closeSecret" style="margin-top:15px;">Close</button>
+
+
+
+  <p contenteditable="true" style="font-size:16px; background:#fffaf6; padding:12px; border-radius:8px; margin-top:10px;">
+    I am v bad at editing ik , this is all i got girl . Really sorry 😭🎀 
+  </p>
+</div>
+
+
+  <div class="section" style="text-align:center;">
+    <h2>🔒 Unlock Secret Page</h2>
+    <input id="passInput" type="password" placeholder="Enter Password" style="padding:10px; border-radius:10px; border:2px solid var(--border); font-size:16px;">
+    <button class="button" onclick="unlockSecret()">Unlock 💞</button>
+  </div>
+
+  <!-- ---------------- Scripts & lightweight effects ---------------- -->
+
+  <!-- Audio (kept) + play fallback -->
+  <audio id="bgMusic" loop src="paaro.mp3"></audio>
+  <!-- Show a small play button if autoplay blocked -->
+  <div id="musicControl" style="position:fixed; right:14px; bottom:14px; z-index:1200;">
+    <button id="musicBtn" class="button" style="padding:10px 12px; font-size:14px;">Play Music ▶️</button>
+  </div>
+
+  <!-- Hello Kitty walking -->
+  <img id="kittyWalk" src="hk1.png" alt="kitty" />
+
+  <!-- Slideshow Intro (overlay) -->
+  <div id="slideshowIntro">
+    <img id="slideImg" src="https://via.placeholder.com/350x250?text=Slide+1" alt="slide">
+    <p id="slideText" style="font-size:20px; color:var(--accent-2); margin-top:14px;">Welcome My Sweet Sameeha 💖</p>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <img src="https://i.imgur.com/OwcuQpG.png" width="160" style="animation:spin 3s linear infinite;" alt="loading">
+    <p style="font-size:20px; color:var(--accent); margin-top:12px;">Loading your cute surprise... 💖</p>
+  </div>
+
+  <!-- confetti library (needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    /* ---------- small utility & safety: run after DOM ready ---------- */
+    document.addEventListener('DOMContentLoaded', () => {
+      // fade in
+      document.body.classList.add('fade-in');
+
+      // hide loader after short delay
+      setTimeout(()=> {
+        const loader = document.getElementById('loader');
+        if(loader) loader.style.display = 'none';
+      }, 900); // shorter so page appears quick
+
+      // slideshow sequence -> hide after slides
+      const slides = [
+        { img: "https://via.placeholder.com/350x250?text=Slide+1", text: "Welcome My Sweet Sameeha 💖"},
+        { img: "https://via.placeholder.com/350x250?text=Slide+2", text: "Today Is Your Special Day 🎀"},
+        { img: "https://via.placeholder.com/350x250?text=Slide+3", text: "Made With All My Love 💞"}
+      ];
+      let s = 0;
+      const slideImg = document.getElementById('slideImg');
+      const slideText = document.getElementById('slideText');
+      function runSlides() {
+        s++;
+        if (s >= slides.length) { document.getElementById('slideshowIntro').style.display='none'; return; }
+        slideImg.src = slides[s].img;
+        slideText.innerText = slides[s].text;
+        setTimeout(runSlides, 1400);
+      }
+      setTimeout(runSlides, 1400);
+
+      // kitty walking is CSS animated; nothing to init
+
+      // Music control: try autoplay, if blocked show play button
+      const music = document.getElementById('bgMusic');
+      const musicBtn = document.getElementById('musicBtn');
+      function tryPlayMusic() {
+        music.play().then(()=> {
+          musicBtn.innerText = 'Pause Music ⏸️';
+        }).catch(()=> {
+          // autoplay blocked -> keep button as Play
+          musicBtn.innerText = 'Play Music ▶️';
+        });
+      }
+      tryPlayMusic();
+      musicBtn.addEventListener('click', () => {
+        if (music.paused) {
+          music.play(); musicBtn.innerText='Pause Music ⏸️';
+        } else { music.pause(); musicBtn.innerText='Play Music ▶️'; }
+      });
+
+      // lightweight sparkle on button clicks only (not continuous)
+      const sparkleOnce = (x=window.innerWidth/2, y=window.innerHeight/2) => {
+        const el = document.createElement('div');
+        el.textContent = '✨';
+        el.style.position='fixed';
+        el.style.left = (x + (Math.random()*60-30)) + 'px';
+        el.style.top = (y + (Math.random()*60-30)) + 'px';
+        el.style.fontSize = '24px';
+        el.style.zIndex = 1500;
+        el.style.opacity = '1';
+        el.style.transition = 'transform .9s ease-out, opacity .9s ease-out';
+        document.body.appendChild(el);
+        setTimeout(()=>{ el.style.transform='translateY(-30px) scale(1.3)'; el.style.opacity='0'; },30);
+        setTimeout(()=>el.remove(),1000);
+      };
+
+      // bind sparkle to some interactions (button clicks)
+      document.querySelectorAll('.button').forEach(btn => {
+        btn.addEventListener('click', (ev) => {
+          const r = ev.currentTarget.getBoundingClientRect();
+          sparkleOnce(r.left + r.width/2, r.top + r.height/2);
+        });
+      });
+
+      // lightweight floating hearts: throttled (not on every mousemove)
+      let lastHeart = 0;
+      document.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastHeart < 300) return; // at most ~3 hearts per second
+        lastHeart = now;
+        const heart = document.createElement('div');
+        heart.textContent = '💗';
+        heart.style.position = 'fixed';
+        heart.style.left = (e.clientX - 8) + 'px';
+        heart.style.top = (e.clientY - 12) + 'px';
+        heart.style.pointerEvents = 'none';
+        heart.style.zIndex = 1400;
+        heart.style.opacity = '0.95';
+        heart.style.transition = 'transform 900ms ease-out, opacity 900ms';
+        document.body.appendChild(heart);
+        requestAnimationFrame(()=> {
+          heart.style.transform = 'translateY(-40px) scale(1.2)';
+          heart.style.opacity = '0';
+        });
+        setTimeout(()=> heart.remove(), 920);
+      });
+
+      // outfit shuffle logic (keeps lightweight)
+      window.outfits = [
+        "https://via.placeholder.com/250x300?text=Outfit+1",
+        "https://via.placeholder.com/250x300?text=Outfit+2",
+        "https://via.placeholder.com/250x300?text=Outfit+3",
+        "https://via.placeholder.com/250x300?text=Outfit+4",
+        "https://via.placeholder.com/250x300?text=Outfit+5"
+      ];
+      window._outIndex = 0;
+      window.shuffleOutfit = function() {
+        window._outIndex = (window._outIndex + 1) % window.outfits.length;
+        document.getElementById('outfitDisplay').src = window.outfits[window._outIndex];
+      };
+
+      // popup handlers
+      window.showLove = function(){ document.getElementById('popup').style.display = 'block'; };
+      window.closePopup = function(){ document.getElementById('popup').style.display = 'none'; };
+
+      // secret unlock -> confetti burst (light)
+      window.unlockSecret = function(){
+  const pass = document.getElementById('passInput').value;
+
+  if (pass === 'kaleshi') {
+
+    const area = document.getElementById('secretPage');
+    area.style.display = 'block';
+
+    // Blur everything else
+    document.body.classList.add("blurEverything");
+
+    // Smooth scroll to the video
+    area.scrollIntoView({ behavior: "smooth" });
+
+    // Play video
+    const vid = document.getElementById('secretVideo');
+    if (vid) {
+      vid.play().catch(()=>{});
+    }
+
+    // Confetti
+    confetti({
+      particleCount: 80,
+      spread: 55,
+      origin: { y: 0.6 }
+    });
+
+  } else {
+    alert('Wrong password! Try again, GUPPI ❤️');
+  }
+};
+document.getElementById("closeSecret").addEventListener("click", function() {
+    
+    // Hide secret page
+    document.getElementById("secretPage").style.display = "none";
+
+    // Remove blur from everything
+    document.body.classList.remove("blurEverything");
+
+    // Stop video
+    const video = document.getElementById("secretVideo");
+    video.pause();
+    video.currentTime = 0;
+
+    // Scroll back up
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}); // end closeSecret click
+}); // end DOMContentLoaded
+
+  </script>
+  
+
+
+</body>
+</html>

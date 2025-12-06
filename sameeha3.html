@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panda Birthday Surprise</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(#d8f3ff, #f4fff8);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: #3c3f44;
+    }
+
+    .header {
+      padding: 40px;
+      background: #ffffffaa;
+      backdrop-filter: blur(6px);
+      border-bottom: 2px solid #d0d0d0;
+    }
+
+    /* Panda Icons */
+    .emoji {
+      font-size: 40px;
+    }
+
+    /* Main photo */
+    .main-photo {
+      display: block;
+      margin: 20px auto;
+      width: 330px;
+      border-radius: 20px;
+      border: 4px solid #a7d0e8;
+      box-shadow: 0 0 15px #b1e1ff;
+    }
+
+    /* Interactive Panda Button */
+    .panda-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 25px;
+      background: #aee6b8;
+      color: #2f4633;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .panda-btn:hover {
+      transform: scale(1.05);
+      background: #96d8a1;
+    }
+
+    /* Panda facts box */
+    .fact-box {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #c5e8d2;
+      font-size: 18px;
+      color: #2f2f2f;
+      line-height: 1.6;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .gallery img {
+      width: 150px;
+      border-radius: 12px;
+      transition: 0.3s;
+      box-shadow: 0 0 12px #d7f0ff;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Panda floating */
+    .floating-panda {
+      position: fixed;
+      top: 50%;
+      left: -120px;
+      width: 110px;
+      animation: float-move 18s linear infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes float-move {
+      from { left: -150px; }
+      to { left: 110%; }
+    }
+
+    /* Simple message box */
+    .message-box {
+      width: 80%;
+      margin: 30px auto;
+      padding: 25px;
+      background: #f8fffb;
+      border-radius: 15px;
+      border: 2px solid #cce9db;
+      font-size: 17px;
+    }
+
+    /* Panda memory carousel */
+    .memory {
+      width: 80%;
+      margin: 30px auto;
+      text-align: center;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #d6f1ff;
+    }
+
+    .memory-img {
+      width: 260px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px #cde8ff;
+    }
+
+    .nav-btn {
+      padding: 10px 20px;
+      border: none;
+      background: #bcd8f0;
+      border-radius: 10px;
+      margin: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background: #a5ccec;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🎉 Happy Birthday My Panda 🐼💚</h1>
+    <h3>Soft, cute, warm, and the best thing in my world ✨</h3>
+  </div>
+
+  <img src="https://via.placeholder.com/330x330?text=Add+Her+Photo" class="main-photo" />
+
+  <h2>🌿 Panda Button Surprise</h2>
+  <button class="panda-btn" onclick="newFact()">Click Me 🐼💬</button>
+
+  <div class="fact-box" id="factBox">Click the button to see something cute...</div>
+
+  <h2>📸 Cute Gallery</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/150?text=Pic1" />
+    <img src="https://via.placeholder.com/150?text=Pic2" />
+    <img src="https://via.placeholder.com/150?text=Pic3" />
+    <img src="https://via.placeholder.com/150?text=Pic4" />
+  </div>
+
+  <h2>📝 A Long Message For You</h2>
+  <div class="message-box">
+    Write your long paragraph for her here...
+  </div>
+
+  <h2>🎞 Memory Carousel</h2>
+  <div class="memory">
+    <img src="https://via.placeholder.com/260x300?text=Memory1" id="memoryImg" class="memory-img" />
+    <br>
+    <button class="nav-btn" onclick="prevMem()">Previous</button>
+    <button class="nav-btn" onclick="nextMem()">Next</button>
+  </div>
+
+  <!-- Floating Panda -->
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616430.png" class="floating-panda" />
+
+<script>
+  // Panda facts
+  const facts = [
+    "You make everything softer than a panda's hug 🐼💞",
+    "Your smile is warmer than bamboo sunlight 🌿✨",
+    "If pandas are cute, you are the entire zoo of cuteness 🐼💚",
+    "You make my world peaceful like a panda nap 🌙🐼",
+    "You are my favourite human bamboo 🌿💗"
+  ];
+
+  function newFact() {
+    const box = document.getElementById('factBox');
+    const random = Math.floor(Math.random() * facts.length);
+    box.innerHTML = facts[random];
+  }
+
+  // Carousel
+  const memories = [
+    "https://via.placeholder.com/260x300?text=Memory1",
+    "https://via.placeholder.com/260x300?text=Memory2",
+    "https://via.placeholder.com/260x300?text=Memory3",
+    "https://via.placeholder.com/260x300?text=Memory4"
+  ];
+
+  let index = 0;
+
+  function nextMem() {
+    index = (index + 1) % memories.length;
+    document.getElementById('memoryImg').src = memories[index];
+  }
+
+  function prevMem() {
+    index = (index - 1 + memories.length) % memories.length;
+    document.getElementById('memoryImg').src = memories[index];
